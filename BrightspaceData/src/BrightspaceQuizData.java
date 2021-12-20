@@ -161,26 +161,10 @@ class Arithmetic{
 	String feedbackText;
 }
 class SignificantFigures extends Arithmetic{
-	int grading;
-	String title;
-	String questionText;
-	String alternativeText;
-	boolean allowAttachments;
-	int points;
-	int difficulty;
-	String formula;
 	int significantFigues;
 	int deduct;
 	int tolerance;
-	int units;
 	int powof10;
-	int percent;
-	String unit;
-	int worth;
-	int numofvars;
-	Variable variables[];
-	String hintText;
-	String feedbackText;
 }
 class MultiShortAnswer{
 	String title;
