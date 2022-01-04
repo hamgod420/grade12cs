@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class FibonacciSequenceRecursion {
 
-    public static int operations = 0;//# of computations
+    public static int operations = 1;//# of computations
 
 	public static int findFib(int n) {
 		if(n<=1) {
