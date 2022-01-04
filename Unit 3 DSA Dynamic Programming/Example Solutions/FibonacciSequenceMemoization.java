@@ -8,8 +8,8 @@ import java.util.*;
  */
 public class FibonacciSequenceMemoization {
 
-    public static int memo[] = new int[1000001];
-    public static int operations = 0;
+    public static int memo[] = new int[1000001];//Memoization array
+    public static int operations = 0;//# of computations
 	public static int findFib(int n) {
 	    if(memo[n]!=0){
 	        return memo[n];
