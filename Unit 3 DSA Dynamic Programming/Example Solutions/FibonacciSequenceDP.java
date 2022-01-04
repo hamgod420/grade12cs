@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class FibonacciSequenceDP {
 
-	public static int operations = 0;
+	public static int operations = 1;
 	
 	public static long findFib(int n) {
 		long dp[]=new long[n+2];//handles 0
