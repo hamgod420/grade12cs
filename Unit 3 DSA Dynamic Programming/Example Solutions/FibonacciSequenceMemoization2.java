@@ -21,8 +21,8 @@ public class FibonacciSequenceMemoization2 {
 			int f = findFib(n-1)+findFib(n-2); 
 			operations += 1;
 			memo.put(n,f);
+			return f;
 		}
-		return f;
 	}
 	
 	public static void main(String[] args) {
