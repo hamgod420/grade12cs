@@ -6,7 +6,7 @@ import java.util.*;
  * @author hamgod
  *
  */
-public class FibonacciSequenceMemoization {
+public class FibonacciSequenceMemoization1 {
 
     public static int memo[] = new int[1000001];//Memoization array
     public static int operations = 1;//# of computations
