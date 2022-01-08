@@ -18,7 +18,7 @@ public class FibonacciSequenceMemoization2 {
 		if(n<=1) {
 			return n;
 		}else{
-			int f; = findFib(n-1)+findFib(n-2); 
+			int f = findFib(n-1)+findFib(n-2); 
 			operations += 1;
 			memo.put(n,f);
 		}
