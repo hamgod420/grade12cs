@@ -20,14 +20,10 @@ int main() {
 	for (int i = 1; i <= r; i++) {
 		for (int j = 1; j <= c; j++) {
 			if (dp[i][j] == -1) {//if iterlating on cat 
+				dp[i][j] = 0;//after iterlating over cat, there will be no paths to that point
 				continue;
 			}
-			if (dp[i - 1][j] == -1) {//if path on left is cat
-				dp[i - 1][j] = 0;//no paths to current point
-			}
-			if (dp[i][j - 1] == -1) {//if path above is cat
-				dp[i][j - 1] = 0;//no paths to current point
-			}
+			
 			dp[i][j] += dp[i - 1][j] + dp[i][j - 1];//counting amount of paths to point (i,j)
 		}
 	}
