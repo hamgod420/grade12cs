@@ -9,8 +9,8 @@
 public class FactorialRecursion {
 
 	public static long findFactorial(int n) {
-		if(n==1) {
-			return n;
+		if(n<=1) {
+			return 1;
 		}
 		return findFactorial(n-1)*n;
 	}
