@@ -5,32 +5,45 @@
  * Entity.java
  */
 public class Entity {
-	// Variables
+	/**
+	   * Attributes
+	   */
 	private String name;
-	public EntityStats entityStats;
+	private EntityStats entityStats;
 
-	// Default Constructor
+	/**
+	   * Constructors
+	   */
 	public Entity() {
 		name = "";
 		entityStats = new EntityStats();
 	}
 
-	// Constructor
 	public Entity(String s, EntityStats stats) {
 		name = s;
 		entityStats = stats;
 	}
 
-	// Getters and Setters
+	/**
+	   * Getters and setters
+	   */
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String s) {
 		name = s;
 	}
-
-	// Update function
+	public EntityStats getEntityStats() {
+		return entityStats;
+	}
+	public void setEntityStats(EntityStats e) {
+		entityStats = e;
+	}
+	
+	/**
+	   * Gets the entity's stats and specifically HP
+	   * @return a message displaying the stats and state of an entity
+	   */
 	public String update() {
 		if (entityStats.getHP() <= 0) {
 			return name + " is dead lol.";
