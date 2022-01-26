@@ -5,14 +5,18 @@
  * Champion.java
  */
 public class Champion extends Entity {
-	// Variables
-	public ChampionStats championStats;
-	public Ability qAbility;
-	public Ability wAbility;
-	public Ability eAbility;
-	public Ability ultimate;
+	/**
+	   * Attributes
+	   */
+	private ChampionStats championStats;
+	private Ability qAbility;
+	private Ability wAbility;
+	private Ability eAbility;
+	private Ability ultimate;
 
-	// Default Constructor
+	/**
+	   * Constructors
+	   */
 	public Champion() {
 		super();
 		championStats = new ChampionStats();
@@ -21,8 +25,6 @@ public class Champion extends Entity {
 		eAbility = new Ability();
 		ultimate = new Ability();
 	}
-
-	// Constructor
 	public Champion(String s, EntityStats ent, ChampionStats champStats, Ability q, Ability w, Ability e, Ability ult) {
 		super(s, ent);
 		championStats = champStats;
@@ -31,57 +33,91 @@ public class Champion extends Entity {
 		eAbility = e;
 		ultimate = ult;
 	}
+	
+	/**
+	   * Getters and setters
+	   */
+	public ChampionStats getChampionStats() {
+		return championStats;
+	}
+	public void setChampionStats(ChampionStats cstats) {
+		championStats = cstats;
+	}
 
-	// Champion functions
-	public void basicAttack(Champion champion, Entity entity) {
-		int damageDealt = DamageCalculator.calcDamage(entityStats.getAD(), champion, entity, 1);
-		entity.entityStats.setHP(entity.entityStats.getHP() - damageDealt);
+	/**
+	   * Champion performs a basic attack on an entity
+	   * @param entity	Can be any entity
+	   */
+	public void basicAttack(Entity entity) {
+		Champion champion = new Champion();
+		int damageDealt = DamageCalculator.calcDamage(getEntityStats().getAD(), champion, entity, 1);
+		entity.getEntityStats().setHP(entity.getEntityStats().getHP() - damageDealt);
 
 		System.out.println(
-				champion.getName() + " auto attacked " + entity.getName() + " for " + damageDealt + " physical damage");
+				getName() + " auto attacked " + entity.getName() + " for " + damageDealt + " physical damage");
 		System.out.println(entity.update());
 	}
 
-	public void castQ(Champion champion, Entity entity) {
-		int originalDamage = DamageCalculator.calculateDamageOutput(entityStats, qAbility);
+	/**
+	   * Champion performs its Q ability on an entity
+	   * @param entity 	Can be any entity
+	   */
+	public void castQ(Entity entity) {
+		Champion champion = new Champion();
+		int originalDamage = DamageCalculator.calculateDamageOutput(getEntityStats(), qAbility);
 		int damageDealt = DamageCalculator.calcDamage(originalDamage, champion, entity, qAbility.getType());
-		entity.entityStats.setHP(entity.entityStats.getHP() - damageDealt);
+		entity.getEntityStats().setHP(entity.getEntityStats().getHP() - damageDealt);
 
 		String _type = qAbility.getType() == 1 ? "physical damage" : "magical damage";
-		System.out.println(champion.getName() + " casted " + qAbility.getName() + " on " + entity.getName() + " for "
+		System.out.println(getName() + " casted " + qAbility.getName() + " on " + entity.getName() + " for "
 				+ damageDealt + " " + _type);
 		System.out.println(entity.update());
 	}
 
-	public void castW(Champion champion, Entity entity) {
-		int originalDamage = DamageCalculator.calculateDamageOutput(entityStats, wAbility);
+	/**
+	   * Champion performs its W ability on an entity
+	   * @param entity 	Can be any entity
+	   */
+	public void castW(Entity entity) {
+		Champion champion = new Champion();
+		int originalDamage = DamageCalculator.calculateDamageOutput(getEntityStats(), wAbility);
 		int damageDealt = DamageCalculator.calcDamage(originalDamage, champion, entity, wAbility.getType());
-		entity.entityStats.setHP(entity.entityStats.getHP() - damageDealt);
+		entity.getEntityStats().setHP(entity.getEntityStats().getHP() - damageDealt);
 
 		String _type = wAbility.getType() == 1 ? "physical damage" : "magical damage";
-		System.out.println(champion.getName() + " casted " + wAbility.getName() + " on " + entity.getName() + " for "
+		System.out.println(getName() + " casted " + wAbility.getName() + " on " + entity.getName() + " for "
 				+ damageDealt + " " + _type);
 		System.out.println(entity.update());
 	}
 
-	public void castE(Champion champion, Entity entity) {
-		int originalDamage = DamageCalculator.calculateDamageOutput(entityStats, eAbility);
+	/**
+	   * Champion performs its E ability on an entity
+	   * @param entity 	Can be any entity
+	   */
+	public void castE(Entity entity) {
+		Champion champion = new Champion();
+		int originalDamage = DamageCalculator.calculateDamageOutput(getEntityStats(), eAbility);
 		int damageDealt = DamageCalculator.calcDamage(originalDamage, champion, entity, eAbility.getType());
-		entity.entityStats.setHP(entity.entityStats.getHP() - damageDealt);
+		entity.getEntityStats().setHP(entity.getEntityStats().getHP() - damageDealt);
 
 		String _type = eAbility.getType() == 1 ? "physical damage" : "magical damage";
-		System.out.println(champion.getName() + " casted " + eAbility.getName() + " on " + entity.getName() + " for "
+		System.out.println(getName() + " casted " + eAbility.getName() + " on " + entity.getName() + " for "
 				+ damageDealt + " " + _type);
 		System.out.println(entity.update());
 	}
 
-	public void castUlt(Champion champion, Entity entity) {
-		int originalDamage = DamageCalculator.calculateDamageOutput(entityStats, ultimate);
+	/**
+	   * Champion performs its ultimate ability on an entity
+	   * @param entity 	Can be any entity
+	   */
+	public void castUlt(Entity entity) {
+		Champion champion = new Champion();
+		int originalDamage = DamageCalculator.calculateDamageOutput(getEntityStats(), ultimate);
 		int damageDealt = DamageCalculator.calcDamage(originalDamage, champion, entity, ultimate.getType());
-		entity.entityStats.setHP(entity.entityStats.getHP() - damageDealt);
+		entity.getEntityStats().setHP(entity.getEntityStats().getHP() - damageDealt);
 
 		String _type = ultimate.getType() == 1 ? "physical damage" : "magical damage";
-		System.out.println(champion.getName() + " casted " + ultimate.getName() + " on " + entity.getName() + " for "
+		System.out.println(getName() + " casted " + ultimate.getName() + " on " + entity.getName() + " for "
 				+ damageDealt + " " + _type);
 		System.out.println(entity.update());
 	}
