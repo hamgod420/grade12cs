@@ -1,11 +1,13 @@
 /**
- * @author Souren
+ * @author hamgod
  * 2021-11-25 
  * Creating Systems 
  * ChampionStats.java
  */
 public class ChampionStats {
-	// Variables
+	/**
+	   * Attributes
+	   */
 	private int healthRegen;
 	private int manaRegen;
 	private int lethality;
@@ -16,7 +18,9 @@ public class ChampionStats {
 	private double physicalVamp;
 	private double omnivamp;
 
-	// Default Constructor
+	/**
+	   * Constructors
+	   */
 	public ChampionStats() {
 		healthRegen = 0;
 		manaRegen = 0;
@@ -28,8 +32,6 @@ public class ChampionStats {
 		physicalVamp = 0.0;
 		omnivamp = 0.0;
 	}
-
-	// Constructor
 	public ChampionStats(int hr, int mr, int lt, double ap, int fmp, double mp, double ls, double pv, double ov) {
 		healthRegen = hr;
 		manaRegen = mr;
@@ -41,60 +43,48 @@ public class ChampionStats {
 		physicalVamp = pv;
 		omnivamp = ov;
 	}
-
-	// Getters and Setters
+	/**
+	   * Getters and setters
+	   */
 	public int getHR() {
 		return healthRegen;
 	}
-
 	public void setHR(int n) {
 		manaRegen = n;
 	}
-
 	public int getLethality() {
 		return lethality;
 	}
-
 	public void setLethality(int n) {
 		lethality = n;
 	}
-
 	public double getArmorPenetration() {
 		return armorPenetration;
 	}
-
 	public void setArmorPenetration(double d) {
 		armorPenetration = d;
 	}
-
 	public int getFlatMagicPenetration() {
 		return flatMagicPenetration;
 	}
-
 	public void setFlatMagicPenetration(int n) {
 		flatMagicPenetration = n;
 	}
-
 	public double getMagicPenetration() {
 		return magicPenetration;
 	}
-
 	public void setMagicPenetration(double d) {
 		magicPenetration = d;
 	}
-
 	public double getLS() {
 		return lifesteal;
 	}
-
 	public void setLS(double d) {
 		lifesteal = d;
 	}
-
 	public double getPV() {
 		return physicalVamp;
 	}
-
 	public void setPV(double d) {
 		physicalVamp = d;
 	}
