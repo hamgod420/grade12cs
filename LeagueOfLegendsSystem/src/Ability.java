@@ -5,14 +5,18 @@
  * Ability.java
  */
 public class Ability {
-	// Variables
+	/**
+	   * Attributes
+	   */
 	private String name;
 	private int type;// 1=physical, 2=magic
 	private int flatDamage;
 	private double scaling;
 	private boolean empowered;// able to crit
-	// Default Constructor
-
+	
+	/**
+	   * Constructors
+	   */
 	public Ability() {
 		name = "";
 		type = 0;
@@ -20,8 +24,6 @@ public class Ability {
 		scaling = 0.0;
 		empowered = false;
 	}
-
-	// Constructor
 	public Ability(String s, int t, int fd, double sc, boolean emp) {
 		name = s;
 		type = t;
@@ -30,43 +32,36 @@ public class Ability {
 		empowered = emp;
 	}
 
-	// Getters and setters
+	/**
+	   * Getters and setters
+	   */
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String s) {
 		name = s;
 	}
-
 	public int getType() {
 		return type;
 	}
-
 	public void setType(int n) {
 		type = n;
 	}
-
 	public int getFlatDamage() {
 		return flatDamage;
 	}
-
 	public void setFlatDamage(int n) {
 		flatDamage = n;
 	}
-
 	public double getScaling() {
 		return scaling;
 	}
-
 	public void setScaling(double d) {
 		scaling = d;
 	}
-
 	public boolean getEmpowered() {
 		return empowered;
 	}
-
 	public void setEmpowered(boolean b) {
 		empowered = b;
 	}
